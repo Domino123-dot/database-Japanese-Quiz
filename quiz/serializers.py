@@ -6,4 +6,4 @@ class questionsSerializer(serializers.ModelSerializer):
     class Meta:
 
         model = questions
-        fields = ('pk' , 'category' , 'question' ,'is_active','good_answer')
+        fields = ('pk' , 'category' , 'question' ,'is_active','good_answer' , "max_points_to_get")

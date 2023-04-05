@@ -6,7 +6,9 @@ class questions(models.Model):
     category = models.CharField("category" , max_length=50)
     question = models.CharField("question" ,max_length=200)
     good_answer = models.CharField("good_answer" , max_length=200)
+    max_points_to_get = models.IntegerField("max_points_to_get" , default=1)
     is_active = models.BooleanField()
+    
 
     def __str__(self):
 
