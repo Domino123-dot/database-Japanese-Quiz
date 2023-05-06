@@ -21,8 +21,9 @@ def questions_list(request):
             return Response(status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
 
-api_view(['PUT', 'DELETE'])
+@api_view(['PUT', 'DELETE'])
 def questions_detail(request, pk):
     try:
         question = questions.objects.get(pk=pk)
@@ -39,3 +40,21 @@ def questions_detail(request, pk):
     elif request.method == 'DELETE':
         question.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+
+@api_view(['GET', 'POST'])
+def changelog_list(request):
+    if request.method == 'GET':
+            data = changelog.objects.all()
+
+            serializer = changelogSerializer(data, context={'request': request}, many=True)
+
+            return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = changelogSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(status=status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
