@@ -12,7 +12,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os;
-
+import os.path  
+PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_URL = '/static/'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)&&adh-r((mjh2)2+41zfkvf!quq&&$-2_s+(r=5+qv7+xo3)p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["back-end.e-hiragana.online"]
+ALLOWED_HOSTS = ["back-end.e-hiragana.online", "localhost" , "127.0.0.1"]
 
 
 # Application definition
