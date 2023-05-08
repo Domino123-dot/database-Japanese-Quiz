@@ -26,7 +26,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 SECRET_KEY = 'django-insecure-)&&adh-r((mjh2)2+41zfkvf!quq&&$-2_s+(r=5+qv7+xo3)p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["back-end.e-hiragana.online", "localhost" , "127.0.0.1"]
 
