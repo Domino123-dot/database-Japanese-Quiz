@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ["back-end.e-hiragana.online", "localhost" , "127.0.0.1"]
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'quiz',
     'django.contrib.admin',
@@ -44,6 +45,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
