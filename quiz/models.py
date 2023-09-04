@@ -25,3 +25,12 @@ class changelog(models.Model):
     
     def __str__(self):
         return f'{self.title} , {self.timestamp}'
+
+
+class DiscordBotRequests(models.Model):
+    ID = models.AutoField(primary_key=True)
+    info = models.TextField("info", max_length=100, default="test discord info")
+    
+    
+    def __str__(self):
+        return f'{self.title} , {self.timestamp}'
