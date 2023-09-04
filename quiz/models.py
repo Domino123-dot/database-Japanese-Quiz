@@ -28,9 +28,8 @@ class changelog(models.Model):
 
 
 class DiscordBotRequests(models.Model):
-    ID = models.AutoField(primary_key=True)
-    info = models.TextField("info", max_length=100, default="test discord info")
+    info = models.TextField("info", default="test discord info")
     
     
     def __str__(self):
-        return f'{self.ID} , {self.info}'
+        return f'{self.info}'
