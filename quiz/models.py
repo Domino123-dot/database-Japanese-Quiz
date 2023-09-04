@@ -33,4 +33,4 @@ class DiscordBotRequests(models.Model):
     
     
     def __str__(self):
-        return f'{self.ID} , {self.title}'
+        return f'{self.ID} , {self.info}'
